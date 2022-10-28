@@ -14,6 +14,6 @@ export default class Container extends Phaser.GameObjects.Container {
     }
 
     randomBetween(min, max) {
-        return Phaser.Math.Between(min, max); 
+        return Phaser.Math.Between(min, max);
     }
 }

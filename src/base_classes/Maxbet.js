@@ -30,7 +30,7 @@ export default class Maxbet {
             //play audio button
             // this.scene.audioPlayButton();
             Options.line = 20;
-            this.scene.btnLine.txtCountLine.setText(Options.line);
+            // this.scene.btnLine.txtCountLine.setText(Options.line);
             Options.coin = 50;
             this.scene.coin.txtCountCoin.setText(Options.coin);
             this.txtCountMaxBet.setText('BET: ' + Options.line * Options.coin);

@@ -14,13 +14,13 @@ export default class Spin {
         // this.scene.autoSpin.buttonAuto.clearTint();
         this.scene.maxBet.maxBet.clearTint();
         this.scene.coin.coin.clearTint();
-        this.scene.btnLine.btnLine.clearTint();
+        // this.scene.btnLine.btnLine.clearTint();
         // this.scene.btnMusic.clearTint();
         // this.scene.btnSound.clearTint();
     }
 
     printResult() {
-        let s1, s2, s3, s4, s5, baseSpin = this.scene.baseSpin.tweens;
+        let s1, s2, s3, baseSpin = this.scene.baseSpin.tweens;
         // if(autoSpin) {
         //     s1 = autoSpin.columnTween1.targets[0];
         //     s2 = autoSpin.columnTween2.targets[0];
@@ -31,16 +31,16 @@ export default class Spin {
             s1 = baseSpin.columnTween1.targets[0];
             s2 = baseSpin.columnTween2.targets[0];
             s3 = baseSpin.columnTween3.targets[0];
-            s4 = baseSpin.columnTween4.targets[0];
-            s5 = baseSpin.columnTween5.targets[0];
+            // s4 = baseSpin.columnTween4.targets[0];
+            // s5 = baseSpin.columnTween5.targets[0];
         // }
         //push symbols name
         Options.result.push(
           [s1.list[3].frame.name, s1.list[2].frame.name, s1.list[1].frame.name],
           [s2.list[3].frame.name, s2.list[2].frame.name, s2.list[1].frame.name],
-          [s3.list[3].frame.name, s3.list[2].frame.name, s3.list[1].frame.name],
-          [s4.list[3].frame.name, s4.list[2].frame.name, s4.list[1].frame.name],
-          [s5.list[3].frame.name, s5.list[2].frame.name, s5.list[1].frame.name]
+          [s3.list[3].frame.name, s3.list[2].frame.name, s3.list[1].frame.name]
+          // [s4.list[3].frame.name, s4.list[2].frame.name, s4.list[1].frame.name],
+          // [s5.list[3].frame.name, s5.list[2].frame.name, s5.list[1].frame.name]
         );
         //function winning lines
         this.getWinningLines();

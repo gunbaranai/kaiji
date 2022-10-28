@@ -8,7 +8,7 @@ import Container from '../base_classes/Container';
 import Credit from '../base_classes/Credit';
 // import Info from '../base_classes/Info';
 import Coin from '../base_classes/Coin';
-import Line from '../base_classes/Line';
+// import Line from '../base_classes/Line';
 import Maxbet from '../base_classes/Maxbet';
 import BaseSpin from '../base_classes/BaseSpin';
 // import AutoSpin from '../base_classes/AutoSpin';
@@ -29,8 +29,8 @@ export default class GameScene extends Phaser.Scene {
         this.container = new Container(this, Config.width - 940, Config.height - 90);
         this.container2 = new Container(this, Config.width - 790, Config.height - 90);
         this.container3 = new Container(this, Config.width - 640, Config.height - 90);
-        this.container4 = new Container(this, Config.width - 490, Config.height - 90);
-        this.container5 = new Container(this, Config.width - 340, Config.height - 90);
+        // this.container4 = new Container(this, Config.width - 490, Config.height - 90);
+        // this.container5 = new Container(this, Config.width - 340, Config.height - 90);
         //add image machine
         const machine = new Sprite(this, Config.width / 2, Config.height / 2, 'background', 'machine.png');
         this.valueMoney = localStorage.getItem('money') ? localStorage.getItem('money') :
@@ -63,7 +63,7 @@ export default class GameScene extends Phaser.Scene {
         //Class Coin
         this.coin = new Coin(this);
         //Class Line
-        this.btnLine = new Line(this);
+        // this.btnLine = new Line(this);
         //Class Maxbet
         this.maxBet = new Maxbet(this);
         //Class Info
