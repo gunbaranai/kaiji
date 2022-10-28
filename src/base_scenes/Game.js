@@ -20,7 +20,7 @@ export default class GameScene extends Phaser.Scene {
 
     create() {
         //Class Audio
-        this.audioObject = new Audio(this);
+        // this.audioObject = new Audio(this);
         // bitmap text
         Options.hsv = Phaser.Display.Color.HSVColorWheel();
         //add bg image
@@ -44,22 +44,22 @@ export default class GameScene extends Phaser.Scene {
         //Class Clock
         this.times = new Time(this);
         //Class Credit
-        this.credits = new Credit(this);
+        // this.credits = new Credit(this);
         //Add sound image
-        const musicName = localStorage.getItem('music') ? localStorage.getItem('music')
-         : 'btn_music_off.png';
-        const soundName = localStorage.getItem('sound') ? localStorage.getItem('sound')
-         : 'btn_sound_off.png';
-        this.btnMusic = new Sprite(this, Config.width - 310, Config.height - 675, 'sound', musicName).setScale(0.6);
-        this.btnSound = new Sprite(this, Config.width - 390, Config.height - 675, 'sound', soundName).setScale(0.6);
-        this.audioMusicName = this.btnMusic.frame.name;
-        this.audioSoundName = this.btnSound.frame.name;
-        this.btnMusic.on('pointerdown', this.onMusic, this);
-        this.btnSound.on('pointerdown', this.onSound, this);
+        // const musicName = localStorage.getItem('music') ? localStorage.getItem('music')
+        //  : 'btn_music_off.png';
+        // const soundName = localStorage.getItem('sound') ? localStorage.getItem('sound')
+        //  : 'btn_sound_off.png';
+        // this.btnMusic = new Sprite(this, Config.width - 310, Config.height - 675, 'sound', musicName).setScale(0.6);
+        // this.btnSound = new Sprite(this, Config.width - 390, Config.height - 675, 'sound', soundName).setScale(0.6);
+        // this.audioMusicName = this.btnMusic.frame.name;
+        // this.audioSoundName = this.btnSound.frame.name;
+        // this.btnMusic.on('pointerdown', this.onMusic, this);
+        // this.btnSound.on('pointerdown', this.onSound, this);
         //play audio default
-        if(this.audioMusicName === 'btn_music.png') {
-            this.audioObject.musicDefault.play();
-        }
+        // if(this.audioMusicName === 'btn_music.png') {
+        //     this.audioObject.musicDefault.play();
+        // }
         //Class Coin
         this.coin = new Coin(this);
         //Class Line
@@ -74,54 +74,54 @@ export default class GameScene extends Phaser.Scene {
         this.baseSpin = new BaseSpin(this);
     }
 
-    onMusic() {
-        if(!Options.checkClick) {
-            if(this.audioMusicName === 'btn_music.png') {
-                this.audioMusicName = 'btn_music_off.png';
-                //audio stop
-                this.audioObject.musicDefault.stop();
-                this.audioObject.audioWin.stop();
-            } else {
-                this.audioMusicName = 'btn_music.png';
-                this.audioPlayButton();
-                //audio play
-                this.audioObject.musicDefault.play();
-            }
-            //save localstorage
-            if(localStorage.getItem('musics')) {
-                localStorage.removeItem('musics');
-                localStorage.setItem('music', this.audioMusicName);
-            } else {
-                localStorage.setItem('music', this.audioMusicName);
-            } 
-            this.btnMusic.setTexture('sound', this.audioMusicName);
-        }
-    }
-
-    onSound() {
-        if(!Options.checkClick) {
-            if(this.audioSoundName === 'btn_sound.png') {
-                this.audioSoundName = 'btn_sound_off.png';
-            } else {
-                this.audioSoundName = 'btn_sound.png';
-                this.audioObject.audioButton.play();
-            }
-            //save localstorage
-            if(localStorage.getItem('sounds')) {
-                localStorage.removeItem('sounds');
-                localStorage.setItem('sound', this.audioSoundName);
-            } else {
-                localStorage.setItem('sound', this.audioSoundName);
-            } 
-            this.btnSound.setTexture('sound', this.audioSoundName);
-        }
-    }
-
-    audioPlayButton() {
-        if(this.audioSoundName === 'btn_sound.png') {
-            this.audioObject.audioButton.play();
-        }
-    }
+    // onMusic() {
+    //     if(!Options.checkClick) {
+    //         if(this.audioMusicName === 'btn_music.png') {
+    //             this.audioMusicName = 'btn_music_off.png';
+    //             //audio stop
+    //             this.audioObject.musicDefault.stop();
+    //             this.audioObject.audioWin.stop();
+    //         } else {
+    //             this.audioMusicName = 'btn_music.png';
+    //             this.audioPlayButton();
+    //             //audio play
+    //             this.audioObject.musicDefault.play();
+    //         }
+    //         //save localstorage
+    //         if(localStorage.getItem('musics')) {
+    //             localStorage.removeItem('musics');
+    //             localStorage.setItem('music', this.audioMusicName);
+    //         } else {
+    //             localStorage.setItem('music', this.audioMusicName);
+    //         }
+    //         this.btnMusic.setTexture('sound', this.audioMusicName);
+    //     }
+    // }
+    //
+    // onSound() {
+    //     if(!Options.checkClick) {
+    //         if(this.audioSoundName === 'btn_sound.png') {
+    //             this.audioSoundName = 'btn_sound_off.png';
+    //         } else {
+    //             this.audioSoundName = 'btn_sound.png';
+    //             this.audioObject.audioButton.play();
+    //         }
+    //         //save localstorage
+    //         if(localStorage.getItem('sounds')) {
+    //             localStorage.removeItem('sounds');
+    //             localStorage.setItem('sound', this.audioSoundName);
+    //         } else {
+    //             localStorage.setItem('sound', this.audioSoundName);
+    //         }
+    //         this.btnSound.setTexture('sound', this.audioSoundName);
+    //     }
+    // }
+    //
+    // audioPlayButton() {
+    //     if(this.audioSoundName === 'btn_sound.png') {
+    //         this.audioObject.audioButton.play();
+    //     }
+    // }
 
     setTextX(value) {
         if(value >= 100000000) this.txtMoney.x = 217;
@@ -140,14 +140,14 @@ export default class GameScene extends Phaser.Scene {
         data.tint.topRight = Options.hsv[359 - Math.floor(Options.i)].color;
         data.tint.bottomLeft = Options.hsv[359 - Math.floor(Options.i)].color;
         data.tint.bottomRight = Options.hsv[Math.floor(Options.i)].color;
-    
+
         Options.i += 0.05;
-    
+
         if (Options.i >= Options.hsv.length)
         {
             Options.i = 0;
         }
-    
+
         return data;
-    }    
+    }
 }

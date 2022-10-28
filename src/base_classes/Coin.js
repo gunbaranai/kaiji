@@ -27,7 +27,7 @@ export default class Coin {
         if (!Options.checkClick && Options.txtAutoSpin === 'AUTO') {
             this.coin.setScale(0.9);
             //play audio button
-            this.scene.audioPlayButton();
+            // this.scene.audioPlayButton();
             if (Options.coin < 50) {
                 Options.coin += 10;
                 this.txtCountCoin.setText(Options.coin);

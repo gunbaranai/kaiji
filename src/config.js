@@ -4,7 +4,7 @@ import Game from './base_scenes/Game';
 
 export default {
     type: Phaser.WEBGL,
-    parent: "slot-game-phaser3",
+    parent: "phaser3-slot-test",
     width: 1280,
     height: 720,
     physics : {

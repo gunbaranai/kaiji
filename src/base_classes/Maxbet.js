@@ -28,7 +28,7 @@ export default class Maxbet {
             < 1000 && Options.txtAutoSpin === 'AUTO') {
             this.maxBet.setScale(0.9);
             //play audio button
-            this.scene.audioPlayButton();
+            // this.scene.audioPlayButton();
             Options.line = 20;
             this.scene.btnLine.txtCountLine.setText(Options.line);
             Options.coin = 50;

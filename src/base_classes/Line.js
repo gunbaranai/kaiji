@@ -22,8 +22,8 @@ export default class Line {
             if (!Options.checkClick && Options.txtAutoSpin === 'AUTO') {
                 this.btnLine.setScale(0.9);
                 //play audio button
-                this.scene.audioPlayButton();
-            
+                // this.scene.audioPlayButton();
+
                 if (Options.line < 20) {
                     Options.line ++;
                     this.txtCountLine.setText(Options.line);

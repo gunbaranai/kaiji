@@ -48,13 +48,13 @@ export default class BaseSpin {
 
     removeTextWin() {
         //play audio button
-        this.scene.audioPlayButton();
-            
-        if(this.scene.audioMusicName === 'btn_music.png') {
-            //stop audio win
-            this.scene.audioObject.audioWin.stop();
-            this.scene.audioObject.audioReels.play();
-        }
+        // this.scene.audioPlayButton();
+        //
+        // if(this.scene.audioMusicName === 'btn_music.png') {
+        //     //stop audio win
+        //     this.scene.audioObject.audioWin.stop();
+        //     this.scene.audioObject.audioReels.play();
+        // }
         //set money
         this.scene.valueMoney -= (Options.coin * Options.line);
         this.scene.txtMoney.setText(this.scene.valueMoney + '$');
@@ -70,8 +70,8 @@ export default class BaseSpin {
         this.scene.maxBet.maxBet.setTint(0xa09d9d);
         this.scene.coin.coin.setTint(0xa09d9d);
         this.scene.btnLine.btnLine.setTint(0xa09d9d);
-        this.scene.btnMusic.setTint(0xa09d9d);
-        this.scene.btnSound.setTint(0xa09d9d);
+        // this.scene.btnMusic.setTint(0xa09d9d);
+        // this.scene.btnSound.setTint(0xa09d9d);
     }
 
     saveLocalStorage() {

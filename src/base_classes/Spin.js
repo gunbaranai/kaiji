@@ -15,8 +15,8 @@ export default class Spin {
         this.scene.maxBet.maxBet.clearTint();
         this.scene.coin.coin.clearTint();
         this.scene.btnLine.btnLine.clearTint();
-        this.scene.btnMusic.clearTint();
-        this.scene.btnSound.clearTint();
+        // this.scene.btnMusic.clearTint();
+        // this.scene.btnSound.clearTint();
     }
 
     printResult() {
@@ -27,7 +27,7 @@ export default class Spin {
             s2 = autoSpin.columnTween2.targets[0];
             s3 = autoSpin.columnTween3.targets[0];
             s4 = autoSpin.columnTween4.targets[0];
-            s5 = autoSpin.columnTween5.targets[0];   
+            s5 = autoSpin.columnTween5.targets[0];
         } else {
             s1 = baseSpin.columnTween1.targets[0];
             s2 = baseSpin.columnTween2.targets[0];
@@ -36,18 +36,19 @@ export default class Spin {
             s5 = baseSpin.columnTween5.targets[0];
         }
         //push symbols name
-        Options.result.push([s1.list[3].frame.name, s1.list[2].frame.name,
-        s1.list[1].frame.name],[s2.list[3].frame.name, s2.list[2].frame.name,
-        s2.list[1].frame.name],[s3.list[3].frame.name, s3.list[2].frame.name,
-        s3.list[1].frame.name],[s4.list[3].frame.name, s4.list[2].frame.name,
-        s4.list[1].frame.name],[s5.list[3].frame.name, s5.list[2].frame.name,
-        s5.list[1].frame.name]);
+        Options.result.push(
+          [s1.list[3].frame.name, s1.list[2].frame.name, s1.list[1].frame.name],
+          [s2.list[3].frame.name, s2.list[2].frame.name, s2.list[1].frame.name],
+          [s3.list[3].frame.name, s3.list[2].frame.name, s3.list[1].frame.name],
+          [s4.list[3].frame.name, s4.list[2].frame.name, s4.list[1].frame.name],
+          [s5.list[3].frame.name, s5.list[2].frame.name, s5.list[1].frame.name]
+        );
         //function winning lines
         this.getWinningLines();
     }
 
     getWinningLines() {
-        for(let lineIndx = 0; lineIndx < Options.line; 
+        for(let lineIndx = 0; lineIndx < Options.line;
             lineIndx ++) {
             let streak = 0;
             let currentkind = null;
@@ -70,12 +71,12 @@ export default class Spin {
                 lineIndx ++;
                 Options.winningLines.push(lineIndx);
                 //audio win
-                this.audioPlayWin();
+                // this.audioPlayWin();
                 //function math money
                 this.mathMoney(currentkind, streak);
             }
             //audio lose
-            this.audioPlayLose();
+            // this.audioPlayLose();
         }
         //get line array
         this.getLineArray(Options.winningLines);
@@ -89,7 +90,7 @@ export default class Spin {
         }
         for(let i = 0; i < lineArr.length; i++) {
             let lineName = 'payline_' + lineArr[i] + '.png';
-            Options.lineArray.push(new Sprite(this.scene, Config.width / 2, 
+            Options.lineArray.push(new Sprite(this.scene, Config.width / 2,
                 Config.height / 2, 'line', lineName));
         }
     }
@@ -97,15 +98,15 @@ export default class Spin {
     mathMoney(symbolName, streak) {
         let index = streak - 3;
         if(streak === 3)
-            this.symbolValue(symbolName, index); 
-        else if(streak === 4) 
             this.symbolValue(symbolName, index);
-        else 
+        else if(streak === 4)
+            this.symbolValue(symbolName, index);
+        else
             this.symbolValue(symbolName, index);
     }
 
     resetOptions() {
-        //reset win && result 
+        //reset win && result
         Options.win = 0;
         Options.moneyWin = 0;
         Options.result = [];
@@ -144,22 +145,22 @@ export default class Spin {
             default:
                 this.getMoney(Options.payvalues[9][index]);
                 break;
-        } 
-    }
-
-    audioPlayWin() {
-        if (this.scene.audioMusicName === 'btn_music.png') {
-            //play audio win
-            this.scene.audioObject.audioWin.play();
         }
     }
 
-    audioPlayLose() {
-        if (this.scene.audioMusicName === 'btn_music.png') {
-            //play audio lose
-            this.scene.audioObject.audioLose.play();
-        }
-    }
+    // audioPlayWin() {
+    //     if (this.scene.audioMusicName === 'btn_music.png') {
+    //         //play audio win
+    //         this.scene.audioObject.audioWin.play();
+    //     }
+    // }
+    //
+    // audioPlayLose() {
+    //     if (this.scene.audioMusicName === 'btn_music.png') {
+    //         //play audio lose
+    //         this.scene.audioObject.audioLose.play();
+    //     }
+    // }
 
     getMoney(money) {
         let maxBet = Options.line * Options.coin;
@@ -194,15 +195,15 @@ export default class Spin {
 
     setTextWidthWin() {
         let width;
-        if(Options.moneyWin >= 100000) 
+        if(Options.moneyWin >= 100000)
             width = Config.width - 340;
-        else if(Options.moneyWin >= 10000) 
+        else if(Options.moneyWin >= 10000)
             width = Config.width - 335;
-        else if(Options.moneyWin >= 1000) 
+        else if(Options.moneyWin >= 1000)
             width = Config.width - 330;
-        else if(Options.moneyWin >= 100) 
+        else if(Options.moneyWin >= 100)
             width = Config.width - 322;
-        else 
+        else
             width = Config.width - 340;
         return width;
     }
