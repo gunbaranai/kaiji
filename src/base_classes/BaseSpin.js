@@ -21,7 +21,7 @@ export default class BaseSpin {
 
     playTweens() {
         if (!Options.checkClick && this.scene.valueMoney >=
-            (Options.coin * Options.line) && Options.txtAutoSpin === 'AUTO') {
+            (Options.coin * Options.line)) {
             //detroy line array
             this.destroyLineArr();
             //setTint
@@ -66,7 +66,7 @@ export default class BaseSpin {
 
     setColor() {
         this.bgSpin.setTint(0xa09d9d);
-        this.scene.autoSpin.buttonAuto.setTint(0xa09d9d);
+        // this.scene.autoSpin.buttonAuto.setTint(0xa09d9d);
         this.scene.maxBet.maxBet.setTint(0xa09d9d);
         this.scene.coin.coin.setTint(0xa09d9d);
         this.scene.btnLine.btnLine.setTint(0xa09d9d);

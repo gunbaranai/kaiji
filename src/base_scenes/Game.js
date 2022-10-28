@@ -11,7 +11,7 @@ import Coin from '../base_classes/Coin';
 import Line from '../base_classes/Line';
 import Maxbet from '../base_classes/Maxbet';
 import BaseSpin from '../base_classes/BaseSpin';
-import AutoSpin from '../base_classes/AutoSpin';
+// import AutoSpin from '../base_classes/AutoSpin';
 
 export default class GameScene extends Phaser.Scene {
     constructor() {
@@ -69,7 +69,7 @@ export default class GameScene extends Phaser.Scene {
         //Class Info
         this.info = new Info(this);
         //Class AutoSpin
-        this.autoSpin = new AutoSpin(this);
+        // this.autoSpin = new AutoSpin(this);
         //Class BaseSpin
         this.baseSpin = new BaseSpin(this);
     }

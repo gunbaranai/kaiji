@@ -25,7 +25,7 @@ export default class Maxbet {
 
     onMaxbet() {
         if (!Options.checkClick && Options.line * Options.coin
-            < 1000 && Options.txtAutoSpin === 'AUTO') {
+            < 1000) {
             this.maxBet.setScale(0.9);
             //play audio button
             // this.scene.audioPlayButton();

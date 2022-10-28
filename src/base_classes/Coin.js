@@ -24,7 +24,7 @@ export default class Coin {
     }
 
     onCoin() {
-        if (!Options.checkClick && Options.txtAutoSpin === 'AUTO') {
+        if (!Options.checkClick) {
             this.coin.setScale(0.9);
             //play audio button
             // this.scene.audioPlayButton();

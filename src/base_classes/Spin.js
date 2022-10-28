@@ -11,7 +11,7 @@ export default class Spin {
 
     clearColor() {
         this.scene.baseSpin.bgSpin.clearTint();
-        this.scene.autoSpin.buttonAuto.clearTint();
+        // this.scene.autoSpin.buttonAuto.clearTint();
         this.scene.maxBet.maxBet.clearTint();
         this.scene.coin.coin.clearTint();
         this.scene.btnLine.btnLine.clearTint();
@@ -20,21 +20,20 @@ export default class Spin {
     }
 
     printResult() {
-        let s1, s2, s3, s4, s5, autoSpin = this.scene.autoSpin.tweens,
-        baseSpin = this.scene.baseSpin.tweens;
-        if(autoSpin) {
-            s1 = autoSpin.columnTween1.targets[0];
-            s2 = autoSpin.columnTween2.targets[0];
-            s3 = autoSpin.columnTween3.targets[0];
-            s4 = autoSpin.columnTween4.targets[0];
-            s5 = autoSpin.columnTween5.targets[0];
-        } else {
+        let s1, s2, s3, s4, s5, baseSpin = this.scene.baseSpin.tweens;
+        // if(autoSpin) {
+        //     s1 = autoSpin.columnTween1.targets[0];
+        //     s2 = autoSpin.columnTween2.targets[0];
+        //     s3 = autoSpin.columnTween3.targets[0];
+        //     s4 = autoSpin.columnTween4.targets[0];
+        //     s5 = autoSpin.columnTween5.targets[0];
+        // } else {
             s1 = baseSpin.columnTween1.targets[0];
             s2 = baseSpin.columnTween2.targets[0];
             s3 = baseSpin.columnTween3.targets[0];
             s4 = baseSpin.columnTween4.targets[0];
             s5 = baseSpin.columnTween5.targets[0];
-        }
+        // }
         //push symbols name
         Options.result.push(
           [s1.list[3].frame.name, s1.list[2].frame.name, s1.list[1].frame.name],
@@ -54,6 +53,7 @@ export default class Spin {
             let currentkind = null;
             for(let coordIndx = 0; coordIndx < Options.payLines[lineIndx].
                 length; coordIndx ++) {
+                console.log("Streak: ", streak, "Coords: ", coords, "Symbol: ", symbolAtCoords)
                 let coords = Options.payLines[lineIndx][coordIndx];
                 let symbolAtCoords = Options.result[coords[0]][coords[1]];
                 if(coordIndx === 0) {
@@ -79,6 +79,7 @@ export default class Spin {
             // this.audioPlayLose();
         }
         //get line array
+        console.log("winning line: ", Options.winningLines);
         this.getLineArray(Options.winningLines);
         //reset Options
         this.resetOptions();

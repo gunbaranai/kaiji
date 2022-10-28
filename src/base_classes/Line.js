@@ -19,7 +19,7 @@ export default class Line {
         });
         //pointer down
         this.btnLine.on('pointerdown', () => {
-            if (!Options.checkClick && Options.txtAutoSpin === 'AUTO') {
+            if (!Options.checkClick) {
                 this.btnLine.setScale(0.9);
                 //play audio button
                 // this.scene.audioPlayButton();
