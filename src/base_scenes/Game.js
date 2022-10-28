@@ -6,7 +6,7 @@ import Audio from '../base_classes/Audio';
 import Sprite from '../base_classes/Sprite';
 import Container from '../base_classes/Container';
 import Credit from '../base_classes/Credit';
-import Info from '../base_classes/Info';
+// import Info from '../base_classes/Info';
 import Coin from '../base_classes/Coin';
 import Line from '../base_classes/Line';
 import Maxbet from '../base_classes/Maxbet';
@@ -67,7 +67,7 @@ export default class GameScene extends Phaser.Scene {
         //Class Maxbet
         this.maxBet = new Maxbet(this);
         //Class Info
-        this.info = new Info(this);
+        // this.info = new Info(this);
         //Class AutoSpin
         // this.autoSpin = new AutoSpin(this);
         //Class BaseSpin
